@@ -1,0 +1,159 @@
+russian([brat], [stem, masculine, animate], [brother]).
+russian([malchik], [stem, masculine, animate], [boy]).
+russian([gorod], [stem, masculine, inanimate], [town]).
+
+russian([stran], [stem, feminine, inanimate], [country]).
+russian([devochk], [stem, feminine, animate], [girl]).
+russian([knig], [stem, feminine, inanimate], [book]). 
+
+russian([neb], [stem, neuter, inanimate], [sky]).
+russian([drev], [stem, neuter, inanimate], [tree]).
+
+russian([], [suffix,masculine,singular,nominative], []).
+russian([a], [suffix,masculine,singular,genitive], []).
+russian([u], [suffix,masculine,singular,dative], []).
+russian([a], [suffix,masculine,singular,accusative], []).
+russian([om], [suffix,masculine,singular,instrumental], []).
+russian([e], [suffix,masculine,singular,prepositional], []).
+
+russian([y], [suffix,masculine,plural,nominative], []).
+russian([ov], [suffix,masculine,plural,genitive], []).
+russian([am], [suffix,masculine,plural,dative], []).
+russian([ov], [suffix,masculine,plural,accusative], []).
+russian([ami], [suffix,masculine,plural,instrumental], []).
+russian([ax], [suffix,masculine,plural,prepositional], []).
+
+russian([a], [suffix,feminine,singular,nominative], []).
+russian([y], [suffix,feminine,singular,genitive], []).
+russian([e], [suffix,feminine,singular,dative], []).
+russian([y], [suffix,feminine,singular,accusative], []).
+russian([oj], [suffix,feminine,singular,instrumental], []).
+russian([e], [suffix,feminine,singular,prepositional], []).
+
+russian([y], [suffix,feminine,plural,nominative], []).
+russian([], [suffix,feminine,plural,genitive], []).
+russian([am], [suffix,feminine,plural,dative], []).
+russian([y], [suffix,feminine,plural,accusative], []).
+russian([ami], [suffix,feminine,plural,instrumental], []).
+russian([ax], [suffix,feminine,plural,prepositional], []).
+
+russian([o], [suffix,neuter,singular,nominative], []).
+russian([a], [suffix,neuter,singular,genitive], []).
+russian([y], [suffix,neuter,singular,dative], []).
+russian([o], [suffix,neuter,singular,accusative], []).
+russian([om], [suffix,neuter,singular,instrumental], []).
+russian([e], [suffix,neuter,singular,prepositional], []).
+
+russian([esa], [suffix,neuter,plural,nominative], []).
+russian([es], [suffix,neuter,plural,genitive], []).
+russian([esam], [suffix,neuter,plural,dative], []).
+russian([esa], [suffix,neuter,plural,accusative], []).
+russian([esami], [suffix,neuter,plural,instrumental], []).
+russian([esax], [suffix,neuter,plural,prepositional], []).
+
+russian([dobr], [stem, adj], [good]).
+russian([izvestn], [stem, adj], [known]).
+russian([krasiv], [stem, adj], [beautiful]).
+
+russian([yj], [adjsuffix,masculine,singular,nominative], []).
+russian([ogo], [adjsuffix,masculine,singular,genitive], []).
+russian([omy], [adjsuffix,masculine,singular,dative], []).
+russian([ogo], [adjsuffix,masculine,singular,anim_accusative], []).
+russian([yj], [adjsuffix,masculine,singular,inanim_accusative], []).
+russian([om], [adjsuffix,masculine,singular,instrumental], []).
+russian([e], [adjsuffix,masculine,singular,prepositional], []).
+
+russian([aja], [adjsuffix,feminine,singular,nominative], []).
+russian([oj], [adjsuffix,feminine,singular,genitive], []).
+russian([oj], [adjsuffix,feminine,singular,dative], []).
+russian([uju], [adjsuffix,feminine,singular,anim_accusative], []).
+russian([uju], [adjsuffix,feminine,singular,inanim_accusative], []).
+russian([oj], [adjsuffix,feminine,singular,instrumental], []).
+russian([oj], [adjsuffix,feminine,singular,prepositional], []).
+
+russian([oe], [adjsuffix,neuter,singular,nominative], []).
+russian([ogo], [adjsuffix,neuter,singular,genitive], []).
+russian([omy], [adjsuffix,neuter,singular,dative], []).
+russian([oe], [adjsuffix,neuter,singular,anim_accusative], []).
+russian([oe], [adjsuffix,neuter,singular,inanim_accusative], []).
+russian([ym], [adjsuffix,neuter,singular,instrumental], []).
+russian([om], [adjsuffix,neuter,singular,prepositional], []).
+
+russian([ye], [adjsuffix,masculine,plural,nominative], []).
+russian([yx], [adjsuffix,masculine,plural,genitive], []).
+russian([ym], [adjsuffix,masculine,plural,dative], []).
+russian([yx], [adjsuffix,masculine,plural,anim_accusative], []).
+russian([ye], [adjsuffix,masculine,plural,inanim_accusative], []).
+russian([ymi], [adjsuffix,masculine,plural,instrumental], []).
+russian([yx], [adjsuffix,masculine,plural,prepositional], []).
+
+russian([ye], [adjsuffix,feminine,plural,nominative], []).
+russian([yx], [adjsuffix,feminine,plural,genitive], []).
+russian([ym], [adjsuffix,feminine,plural,dative], []).
+russian([yx], [adjsuffix,feminine,plural,anim_accusative], []).
+russian([ye], [adjsuffix,feminine,plural,inanim_accusative], []).
+russian([ymi], [adjsuffix,feminine,plural,instrumental], []).
+russian([yx], [adjsuffix,feminine,plural,prepositional], []).
+
+russian([ye], [adjsuffix,neuter,plural,nominative], []).
+russian([yx], [adjsuffix,neuter,plural,genitive], []).
+russian([ym], [adjsuffix,neuter,plural,dative], []).
+russian([yx], [adjsuffix,neuter,plural,anim_accusative], []).
+russian([ye], [adjsuffix,neuter,plural,inanim_accusative], []).
+russian([ymi], [adjsuffix,neuter,plural,instrumental], []).
+russian([yx], [adjsuffix,neuter,plural,prepositional], []).
+
+
+russian(A, [adj, Gender, Number, nominative, unmarked], B) :-
+    russian(W, [stem, adj], B),
+    russian(S, [adjsuffix,Gender,Number,nominative], []),
+    append(W,S,A).
+
+russian(A, [adj, Gender, Number, dative, unmarked], B) :-
+    russian(W, [stem, adj], B),
+    russian(S, [adjsuffix,Gender,Number,dative], []),
+    append(W,S,A).
+
+russian(A, [adj, Gender, Number, genitive, unmarked], B) :-
+    russian(W, [stem, adj], B),
+    russian(S, [adjsuffix,Gender,Number,genitive], []),
+    append(W,S,A).
+
+russian(A, [adj, Gender, Number, accusative, animate], B) :-
+    russian(W, [stem, adj], B),
+    russian(S, [adjsuffix,Gender,Number,anim_accusative], []),
+    append(W,S,A).
+
+russian(A, [adj, Gender, Number, accusative, inanimate], B) :-
+    russian(W, [stem, adj], B),
+    russian(S, [adjsuffix,Gender,Number,inanim_accusative], []),
+    append(W,S,A).
+
+russian(A, [adj, Gender, Number, instrumental, unmarked], B) :-
+    russian(W, [stem, adj], B),
+    russian(S, [adjsuffix,Gender,Number,instrumental], []),
+    append(W,S,A).
+
+russian(A, [adj, Gender, Number, prepositional, unmarked], B) :-
+    russian(W, [stem, adj], B),
+    russian(S, [adjsuffix,Gender,Number,prepositional], []),
+    append(W,S,A).
+
+russian(A, [noun, Gender, Number, Case, Ani], B) :-
+    russian(W, [stem, Gender, Ani], B),
+    russian(S, [suffix,Gender,Number,Case],[]),
+    append(W,S,A).
+
+russian(A, [nounphrase, Gender, Number, Case, animate], B) :-
+    russian(W, [adj, Gender, Number, Case, Ani], M1),
+    russian(S, [noun, Gender, Number, Case, animate],M2),
+    append(W,S,A),
+    append(M1,M2,B),
+    not(Ani = inanimate).
+
+russian(A, [nounphrase, Gender, Number, Case, inanimate], B) :-
+    russian(W, [adj, Gender, Number, Case, Ani], M1),
+    russian(S, [noun, Gender, Number, Case, inanimate],M2),
+    append(W,S,A),
+    append(M1,M2,B),
+    not(Ani = animate).
